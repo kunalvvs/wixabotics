@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WIXABOTIC — Coming Soon</title>
+  <meta name="description" content="AI-powered WhatsApp marketing & automation. Launching soon." />
+  <meta property="og:title" content="WIXABOTIC — Coming Soon" />
+  <meta property="og:description" content="AI-powered WhatsApp marketing & automation platform. Launching soon." />
+  <link rel="icon" href="images/logo copy.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:   #060f0a;
+      --lime: #b6ff5c;
+      --green:#25d366;
+      --text: #e4f2ea;
+      --muted:#6b9680;
+      --glass:rgba(255,255,255,.04);
+      --gb:   rgba(255,255,255,.07);
+      --ff-d: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+      --ff-b: "Plus Jakarta Sans", system-ui, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    body {
+      font-family: var(--ff-b);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 44%, rgba(37,211,102,.07) 0%, transparent 65%),
+        var(--bg);
+    }
+
+    /* grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+    }
+
+    /* ── page ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      height: 100svh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    /* ── logo ── */
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 2rem;
+    }
+
+    .logo img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-name {
+      font-family: var(--ff-d);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--lime);
+    }
+
+    /* ── broadcast rings ── */
+    .signal {
+      position: relative;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 2rem;
+    }
+
+    .signal-rings { position: absolute; inset: 0; }
+
+    .ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1.5px solid rgba(37,211,102,.28);
+      animation: pulse 3.2s ease-out infinite;
+    }
+
+    .ring:nth-child(2) { animation-delay: .8s; }
+    .ring:nth-child(3) { animation-delay: 1.6s; }
+    .ring:nth-child(4) { animation-delay: 2.4s; }
+
+    @keyframes pulse {
+      0%   { transform: scale(1);  opacity: .75; }
+      80%  { opacity: .08; }
+      100% { transform: scale(8.5); opacity: 0; }
+    }
+
+    .signal-dot {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 6px rgba(37,211,102,.14), 0 0 30px rgba(37,211,102,.32);
+      z-index: 1;
+    }
+
+    .signal-dot svg { width: 26px; height: 26px; fill: #fff; }
+
+    /* ── headline ── */
+    .headline {
+      font-family: var(--ff-d);
+      font-size: clamp(3.6rem, 10vw, 6.5rem);
+      font-weight: 800;
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+    }
+
+    .headline .lime { color: var(--lime); }
+
+    /* ── sub ── */
+    .sub {
+      font-size: clamp(.85rem, 2vw, 1rem);
+      color: var(--muted);
+      max-width: 36ch;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    /* ── feature chips ── */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.45rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38rem;
+      padding: 0.38rem 0.85rem;
+      background: var(--glass);
+      border: 1px solid var(--gb);
+      border-radius: 50px;
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.01em;
+    }
+
+    .chip::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--lime);
+      opacity: 0.65;
+      flex-shrink: 0;
+    }
+
+    /* ── badge ── */
+    .badge {
+      margin-top: 2.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(107,150,128,.5);
+    }
+
+    .badge-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* small-height screens */
+    @media (max-height: 620px) {
+      .logo { margin-bottom: 1.2rem; }
+      .signal { margin-bottom: 1.2rem; }
+      .headline { font-size: clamp(2.8rem, 8vw, 4rem); margin-bottom: 0.8rem; }
+      .sub { margin-bottom: 1.2rem; font-size: .8rem; }
+      .badge { margin-top: 1.6rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ring { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="logo">
+      <img src="images/logo copy.png" alt="Wixabotic" />
+      <span class="logo-name">Wixabotic</span>
+    </div>
+
+    <div class="signal">
+      <div class="signal-rings">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+      </div>
+      <div class="signal-dot">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2C8.268 2 2 8.268 2 16c0 2.456.664 4.758 1.82 6.738L2 30l7.47-1.796A13.924 13.924 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.55 11.55 0 01-5.88-1.598l-.422-.25-4.366 1.05 1.072-4.248-.276-.434A11.55 11.55 0 014.4 16C4.4 9.592 9.592 4.4 16 4.4S27.6 9.592 27.6 16 22.408 27.6 16 27.6zm6.334-8.643c-.347-.174-2.054-1.015-2.372-1.13-.317-.116-.548-.174-.779.174-.231.347-.896 1.13-1.098 1.36-.202.231-.405.26-.752.087-.347-.174-1.463-.54-2.787-1.723-1.03-.92-1.726-2.056-1.928-2.402-.202-.347-.022-.534.152-.707.155-.154.347-.405.52-.607.174-.202.231-.347.347-.578.116-.231.058-.434-.029-.607-.087-.174-.78-1.881-1.07-2.576-.281-.676-.567-.584-.78-.595-.202-.01-.434-.012-.665-.012-.231 0-.607.087-.925.434C11.93 11.43 11 12.476 11 14.357s1.095 3.354 1.247 3.585c.154.231 2.154 3.29 5.22 4.614.73.315 1.3.502 1.744.643.733.232 1.4.2 1.928.12.588-.088 1.81-.74 2.065-1.455.254-.715.254-1.328.178-1.455-.075-.127-.289-.202-.607-.347z"/>
+        </svg>
+      </div>
+    </div>
+
+    <h1 class="headline">Coming<br><span class="lime">Soon.</span></h1>
+
+    <p class="sub">AI-powered WhatsApp marketing &amp; automation — broadcast, engage, and convert at scale.</p>
+
+    <div class="chips">
+      <span class="chip">Broadcast</span>
+      <span class="chip">AI Chatbots</span>
+      <span class="chip">Live Inbox</span>
+      <span class="chip">Automation</span>
+    </div>
+
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Built on Official WhatsApp Business API
+    </div>
+
+  </div>
+</body>
+</html>
