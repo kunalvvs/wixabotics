@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WIXABOTIC — Coming Soon</title>
-  <meta name="description" content="AI-powered WhatsApp marketing & automation. Launching soon." />
+  <meta name="description" content="DFY AI-proven WhatsApp marketing automation for fully automated sales funnels. Launching soon." />
   <meta property="og:title" content="WIXABOTIC — Coming Soon" />
-  <meta property="og:description" content="AI-powered WhatsApp marketing & automation platform. Launching soon." />
+  <meta property="og:description" content="DFY AI-proven WhatsApp marketing automation for fully automated sales funnels. Launching soon." />
   <link rel="icon" href="images/logo copy.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,8 +27,7 @@
     }
 
     html, body {
-      height: 100%;
-      overflow: hidden;
+      min-height: 100%;
       background: var(--bg);
     }
 
@@ -55,13 +54,12 @@
     .page {
       position: relative;
       z-index: 1;
-      height: 100svh;
-      overflow: hidden;
+      min-height: 100svh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1.5rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
@@ -137,7 +135,7 @@
       font-size: clamp(3.6rem, 10vw, 6.5rem);
       font-weight: 800;
       line-height: 0.92;
-      letter-spacing: -0.035em;
+      letter-spacing: 0;
       text-wrap: balance;
       color: var(--text);
       margin-bottom: 1.2rem;
@@ -149,9 +147,40 @@
     .sub {
       font-size: clamp(.85rem, 2vw, 1rem);
       color: var(--muted);
-      max-width: 36ch;
+      max-width: 46ch;
       line-height: 1.65;
       margin-bottom: 2rem;
+    }
+
+    .client-line {
+      max-width: 52ch;
+      margin: -0.6rem auto 1rem;
+      color: var(--text);
+      font-size: clamp(1rem, 2.8vw, 1.28rem);
+      font-weight: 700;
+      line-height: 1.45;
+      text-wrap: balance;
+    }
+
+    .client-line .highlight {
+      color: var(--lime);
+    }
+
+    .contact {
+      margin-top: 1rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .contact a {
+      color: var(--lime);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     /* ── feature chips ── */
@@ -212,8 +241,19 @@
       .logo { margin-bottom: 1.2rem; }
       .signal { margin-bottom: 1.2rem; }
       .headline { font-size: clamp(2.8rem, 8vw, 4rem); margin-bottom: 0.8rem; }
-      .sub { margin-bottom: 1.2rem; font-size: .8rem; }
+      .client-line { margin-bottom: .75rem; font-size: .92rem; }
+      .sub { margin-bottom: 1.2rem; font-size: .78rem; }
+      .contact { margin-top: .75rem; font-size: .78rem; }
       .badge { margin-top: 1.6rem; }
+    }
+
+    @media (max-width: 420px) {
+      .logo { margin-bottom: 1.45rem; }
+      .signal { margin-bottom: 1.45rem; }
+      .headline { font-size: clamp(3rem, 18vw, 4.2rem); }
+      .client-line { max-width: 31ch; font-size: .96rem; }
+      .sub { max-width: 34ch; }
+      .badge { justify-content: center; text-align: left; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -245,7 +285,9 @@
 
     <h1 class="headline">Coming<br><span class="lime">Soon.</span></h1>
 
-    <p class="sub">AI-powered WhatsApp marketing &amp; automation — broadcast, engage, and convert at scale.</p>
+    <p class="client-line">Your Industry's Best <span class="highlight">Sales Funnels</span>, Fully Automated on WhatsApp.</p>
+
+    <p class="sub">DFY AI-proven WhatsApp marketing automation that helps you broadcast, engage, and convert at scale.</p>
 
     <div class="chips">
       <span class="chip">Broadcast</span>
@@ -253,6 +295,8 @@
       <span class="chip">Live Inbox</span>
       <span class="chip">Automation</span>
     </div>
+
+    <p class="contact">Email: <a href="mailto:wixabotic@gmail.com">wixabotic@gmail.com</a></p>
 
     <div class="badge">
       <span class="badge-dot"></span>
